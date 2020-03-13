@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mom, I'm flying!</title>
+  <style>
+    body {
+     background-image: url("sky.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <p style="text-align: center">
+    <img src="James.png" style="position: relative; width: 20%;">
+  </p>
+  <script>
+    let ddong = document.querySelector("img");
+    let angle = Math.PI / 2;
+
+    function animate(time, lastTime) {
+      if (lastTime != null) {
+        angle += (time - lastTime) * 0.001;
+      }
+      ddong.style.top = (Math.sin(angle) * 400) + "px";
+      ddong.style.left = (Math.cos(angle) * 300) + "px";
+      requestAnimationFrame(newTime => animate(newTime, time));
+    }
+    requestAnimationFrame(animate);
+  </script>
+</body>
+
+</html>

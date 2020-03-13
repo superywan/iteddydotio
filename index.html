@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-146369564-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "UA-146369564-1");
+    </script>
+    <!-- Google Analytics Ends-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>I'm Eddy</title>
+    <link rel="icon" href="Img/Laptop.png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+  </head>
+
+  <body>
+    <!-- Menu Bar -->
+    <header class="topbar">
+      <nav id="nav-button">
+        <span class="hover">Hover</span><span class="click">touch here</span> to
+        open menu
+        <ul id="main-dropdown">
+          <li><a href="#main" class="dddong">MAIN</a></li>
+          <li><a href="#about" class="dddong">ABOUT</a></li>
+          <li><a href="#contact" class="dddong">CONTACT</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h1 style="text-align: center;">
+          <a href="#" style="color: black;">iteddy.io</a>
+        </h1>
+        <p style="text-align: center; padding-top: 5px;">
+          This is Eddy Yi's website
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <section id="main" class="sectionMA mainSection">
+      <p class="mainDesign">
+        <img src="Img/Main_Logo.png" alt="mainLogo" id="mainPIC" />
+      </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="sectionMA aboutSection">
+      <h1 style="text-align: center;">About</h1>
+      <img
+        src="Img/My_Photo.jpeg"
+        alt="Eddy photo"
+        class="aboutPic"
+        id="myPic"
+      />
+      <div class="Aboutstyle">
+        <p>I'm a student at</p>
+        <p>Santa Monica College majoring in Web Programming.</p>
+        <p>I'm learning:</p>
+        <p style="line-height: 1.8; font-family: Georgia;">
+          <span style="color: blue;">HTML</span>,
+          <span style="color: Red;">CSS</span> ,
+          <span style="color: Green;">JavaScript</span>,
+          <span style="color: #9B870C;">Python</span>,
+          <span style="color: purple;">C++</span>
+        </p>
+        <p>Click <a id="imgLink" href="#about">here</a> to get a picture.</p>
+        <p>&nbsp;</p>
+        <p>Here's some fun things that I worked with JS and CSS:</p>
+        <li>
+          <a href="KevinNBrown/defecator.html" class="defecatingLink"
+            >Kevin and Brown</a
+          >
+        </li>
+        <li>
+          <a href="FlyingHead/flyingDdong.html" class="defecatingLink"
+            >Flying head</a
+          >
+        </li>
+        <li>
+          <a href="Typing-Practice/index.html" class="defecatingLink"
+            >Typing-Practice</a
+          >
+        </li>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="sectionC contactSection">
+      <h1 style="text-align: center; margin-top: 30px;">Contact Me</h1>
+      <div class="contactDesign">
+        <p id="ESize">
+          Email:
+          <a style="color: black;" href="mailto:yiwan1914@gmail.com"
+            >superywan@gmail.com</a
+          >
+        </p>
+        <p id="psSize">Phone: &nbsp;323.797.1218</p>
+        <div class="image-container">
+          <a href="https://www.instagram.com/superywan" target="_blank"
+            ><img src="Img/Instagram-Icon-01.png" alt="Yi Wan Instagram"
+          /></a>
+        </div>
+      </div>
+    </section>
+    <!-- Copyrights -->
+    <p id="copyrights">site design &copy; 2019 Wan Yi</p>
+
+    <script type="text/javascript">
+      // Click here to get picture
+      var imgLink = document.getElementById("imgLink");
+      var myPic = document.getElementById("myPic");
+      imgLink.addEventListener("click", e => {
+        e.preventDefault();
+        if (myPic.style.opacity == 0) {
+          myPic.style.opacity = 1;
+        } else {
+          myPic.style.opacity = 0;
+        }
+      });
+      // Navigation Bar
+      var navButton = document.getElementById("nav-button");
+      var touchDevice = false;
+      window.addEventListener("touchstart", e => {
+        touchDevice = true;
+        if (e.target.id == "nav-button") {
+          document.getElementById("main-dropdown").style.display = "block";
+        } else {
+          if (e.target.nodeName == "A") {
+            window.location = e.target.href;
+          }
+          document.getElementById("main-dropdown").style.display = "none";
+        }
+      });
+      window.addEventListener("touchend", e => {
+        if (e.target.id != "nav-button") {
+          if (e.target.nodeName == "A") {
+            window.location = e.target.href;
+          }
+          document.getElementById("main-dropdown").style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>
